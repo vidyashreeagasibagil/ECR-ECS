@@ -10,7 +10,7 @@ pipeline {
         SERVICE_NAME="nodejs-container-service"
         TASK_DEFINITION_NAME="first-run-task-definition:3"
         DESIRED_COUNT="1"
-        registryCredential = “AWS_CRED"
+        registryCredential ="$AWS_CRED"
     }
    
     stages {
