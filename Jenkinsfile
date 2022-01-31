@@ -3,7 +3,7 @@ pipeline {
 	tools {nodejs "nodejs"}
     environment {
         IMAGE_TAG="latest"
-        
+        registryCredential=credentials('AWS_CRED')
 	AWS_ACCOUNT_ID="039149835663"
         AWS_DEFAULT_REGION="us-east-1" 
         IMAGE_REPO_NAME="exercise-last"
