@@ -3,7 +3,7 @@ pipeline {
 	tools {nodejs "nodejs"}
     environment {
         IMAGE_TAG="latest"
-	    registryCredential="${aws}"
+	   
 	AWS_ACCOUNT_ID="039149835663"
         AWS_DEFAULT_REGION="us-east-1" 
         IMAGE_REPO_NAME="exercise-last"
@@ -56,7 +56,7 @@ pipeline {
       }
     stage('Deploy') {
      steps{
-            withAWS(credentials: registryCredential, region: "${AWS_DEFAULT_REGION}") {
+            withAWS(credentials: 'aws', region: "${AWS_DEFAULT_REGION}") {
                 script {
 			sh './script.sh'
                 }
